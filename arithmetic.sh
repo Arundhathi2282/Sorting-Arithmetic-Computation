@@ -1,5 +1,6 @@
 #!/bin/bash -x
 declare -A dict
+declare -a array
 read -p "Enter 1st input : " a
 read -p "Enter 2nd input : " b
 read -p "Enter 3rd input : " c
@@ -19,5 +20,9 @@ i=$(($i+1))
 dict[$i]=$y
 i=$(($i+1))
 dict[$i]=$z
-echo ${dict[@]}
+echo "Values in dictionary is : ${dict[@]}"
+for((i=0;i<=3;i++))
+do
+	array[$i]=${dict[$i]}
 done
+echo "Values in array is : ${array[@]}"
